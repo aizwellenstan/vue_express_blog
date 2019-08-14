@@ -39,7 +39,7 @@ export default {
             this.$router.push('/login')
             this.$message({
                 type: 'success',
-                message: '注册成功，请登录'
+                message: '登録成功，ログインして下さい'
             })
         }
     }
