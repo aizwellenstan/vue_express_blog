@@ -11,8 +11,7 @@
     "serve": "nodemon index.js && vue-cli-service serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vue-cli-service build& npm run start-server$",
-    "lint": "vue-cli-service lint",
-    "postinstall": "npm run build"
+    "lint": "vue-cli-service lint"
   },
   "author": "",
   "license": "ISC",
