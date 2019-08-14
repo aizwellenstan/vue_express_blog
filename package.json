@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "webpack-cli": "*",
     "bcrypt": "3.0.1",
     "cors": "^2.8.5",
     "express": "^5.0.0-alpha.7",

@@ -2,11 +2,13 @@
     <div>
         <h1 class="text-primary">My Posts</h1>
         <el-table :data="items">
+        <template slot="empty">No Data</template>
             <el-table-column type="index" width="50" label="ID"></el-table-column>
             <el-table-column prop="title" label="Title"></el-table-column>
             <el-table-column prop="author.username" label="作者"></el-table-column>
             <el-table-column prop="createdAt" label="日期"></el-table-column>
             <el-table-column fixed="right" label="操作" width="180">
+
                 <template slot-scope="scope">
                     <el-button
                     class="btn"
