@@ -4,9 +4,9 @@ app.set('secret', 'abcd')
 app.use(require('cors')())
 app.use(express.json())
 
-// 引用数据库
+// Require Database
 require('./plugins/db')(app)
-// 路由
+// Router
 require('./routes/router')(app)
 require('./routes/user-router')(app)
 
