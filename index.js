@@ -1,11 +1,13 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require ('cors')
 const history = require('connect-history-api-fallback')
 const serveStatic = require("serve-static")
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(cors());
 app.use(history({
     // OPTIONAL: Includes more verbose logging
     verbose: true
