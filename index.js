@@ -1,10 +1,17 @@
 const express = require('express')
+const history = require('connect-history-api-fallback')
 const serveStatic = require("serve-static")
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use(serveStatic(path.join(__dirname, '/dist')));
+app.use(history({
+    // OPTIONAL: Includes more verbose logging
+    verbose: true
+}))
+
+// Serve static assets from the build files (images, etc)
+app.use(serveStatic(path.join(__dirname, '/dist')))
 
 app.set('secret', 'abcd')
 app.use(require('cors')())
