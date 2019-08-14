@@ -1,0 +1,202 @@
+@import './variables';
+
+// reset css
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    // background-color: #f1f1f1;
+}
+
+a {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.75rem;
+}
+
+// text
+@each $var in (left, center, right) {
+    .text-#{$var} {
+        text-align: $var !important;
+    }
+}
+
+
+
+@each $colorKey,
+$color in $colors {
+    .text-#{$colorKey} {
+        color: $color;
+    }
+
+    .bg-#{$colorKey} {
+        background-color: $color;
+    }
+}
+
+
+
+@each $key,
+$size in $font-sizes {
+    .fs-#{$key} {
+        font-size: $size * $base-font-size !important;
+    }
+}
+
+// flex
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+@each $key,
+$value in $flex-jc {
+    .jc-#{$key} {
+        justify-content: $value;
+    }
+}
+
+
+
+@each $key,
+$value in $flex-ai {
+    .ai-#{$key} {
+        align-items: $value;
+    }
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+
+@each $type-key,
+$type-value in $spacing-types {
+
+    @each $direction-key,
+    $direction-value in $spacing-directions {
+
+        @each $key,
+        $size in $spacing-sizes {
+            .#{$type-key}#{$direction-key}-#{$key} {
+                #{$type-value}-#{$direction-value}: $size*$spacing-base-size;
+            }
+
+            // .m-0,p-0
+            .#{$type-key}-#{$key} {
+                #{$type-value}: $size*$spacing-base-size;
+            }
+
+            // .mx-0
+            .#{$type-key}x-#{$key} {
+                #{$type-value}-left: $size*$spacing-base-size;
+                #{$type-value}-right: $size*$spacing-base-size;
+            }
+
+            // .my-0
+            .#{$type-key}y-#{$key} {
+                #{$type-value}-top: $size*$spacing-base-size;
+                #{$type-value}-bottom: $size*$spacing-base-size;
+            }
+        }
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 0.2308rem;
+    font-size: map-get($map: $font-sizes, $key: 'sm')*$base-font-size;
+    background-color: map-get($map: $colors, $key: 'primary');
+}
+
+.nav {
+    display: flex;
+
+    .nav-item {
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.1rem;
+    } 
+
+    .active {
+        color: map-get($map: $colors, $key: 'primary');
+        border-bottom: 3px solid map-get($map: $colors, $key: 'primary');
+    }
+}
+
+.nav-inverse {
+    display: flex;
+
+    .nav-item {
+        color: white;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.1rem;
+    }
+
+    .active {
+        color: map-get($map: $colors, $key: 'white');
+        border-bottom: 3px solid map-get($map: $colors, $key: 'white');
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+// sprite
+// .sprite {
+//     background: url(../images/icons.png) no-repeat 0 0;
+//     background-size: 28.8462rem;
+//     display: inline-block;
+//     &.sprite-news{
+//         width: 1.7692rem;
+//         height: 1.5385rem;
+//         background-position: 63.546% 15.517%;
+//     }
+//     &.sprite-story {
+//         width: 1.7692rem;
+//         height: 1.5385rem;
+//         background-position: 90.483% 15.614%;
+//     }
+//     &.sprite-arrow {
+//         width: 0.7692rem;
+//         height: 0.7692rem;
+//         background-position: 38.577% 52.076%;
+//     }
+// }
+
+.text-ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// border
+@each $var in (top, right, bottom, left) {
+    .border-#{$var} {
+        border-#{$var}: 1px solid $border-color;
+    }
+}
