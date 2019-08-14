@@ -19,13 +19,14 @@
                 <div class="flex-1"></div>
                 <div class="fs-lg">
                     <span>Hello,</span>
+                    <span>{{model.username}}&nbsp;</span>
                     <span>
                         <a
                             href
                             @click="logout"
                             class="text-primary"
                             style="font-weight:bold"
-                        >{{model.username}}</a>
+                        >ログアウト</a>
                     </span>
                 </div>
             </div>
