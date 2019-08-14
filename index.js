@@ -1,14 +1,8 @@
 const express = require('express')
-const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
-const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
 
-app.use(staticFileMiddleware);
-
-app.get('/.*/', function (req, res) {
-  res.render(path.join(__dirname + 'src/index.html'));
-});
+app.use(express.static(__dirname + "/dist/"));
 
 app.set('secret', 'abcd')
 app.use(require('cors')())
