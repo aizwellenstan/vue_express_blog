@@ -1,5 +1,4 @@
 const express = require('express')
-const fs = require ('fs')
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -13,7 +12,7 @@ app.use(express.static(__dirname + "/dist/"));
 // これでルート以外でリロードしてもindex.htmlを読み込んでちゃんとルーティングをしてくれる
 // /.*/で全てのルートを指定。req(request), res(response)
 app.get(/.*/, function(req, res) {
-    res.sendfile(__dirname + "/dist/index.html");
+    res.sendFile(__dirname + "/dist/index.html");
 });
 
 app.set('secret', 'abcd')
