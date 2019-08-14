@@ -10,8 +10,9 @@
     "start-client": "vue-cli-service serve",
     "serve": "nodemon index.js && vue-cli-service serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vue-cli-service build& npm run start-server$",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "heroku-postinstall": "npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
