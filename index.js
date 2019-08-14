@@ -12,6 +12,8 @@ require('./plugins/db')(app)
 require('./routes/router')(app)
 require('./routes/user-router')(app)
 
+app.use(express.static(__dirname + '/public'));
+
 app.listen(port, (req,res) => {
     console.log('app is running on 3000')
 })
