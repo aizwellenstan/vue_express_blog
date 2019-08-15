@@ -12,7 +12,11 @@
     </router-link>-->
 
     <div>
-        <div class="list_con" v-for="(article,index) in reverseArticles" :key="index">
+      <div class="search-wrapper">
+        <label>探す:</label>
+        <input type="text" v-model="search" placeholder="キーワードを入力"/>
+      </div>
+        <div class="list_con" v-for="(article,index) in filteredList" :key="index">
             <el-card class="box-card my-1">
                 <div class="title">
                     <router-link tag="a" :to="`/article/${article._id}`">
@@ -45,10 +49,20 @@ export default {
             return dayjs(val).format("MMDD");
         }
     },
+    data: function () {
+       return {
+         search: ""
+       }
+    },
     computed: {
       // 配列の要素順番を逆順にする
       reverseArticles() {
           return this.articles.slice().reverse();
+      },
+      filteredList() {
+        return this.reverseArticles.filter(reverseArticles => {
+          return reverseArticles.title.toLowerCase().includes(this.search.toLowerCase())
+        })
       }
   }
 };
