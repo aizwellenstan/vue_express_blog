@@ -12,7 +12,7 @@
     </router-link>-->
 
     <div>
-        <div class="list_con" v-for="(article,index) in articles" :key="index">
+        <div class="list_con" v-for="(article,index) in reverseArticles" :key="index">
             <el-card class="box-card my-1">
                 <div class="title">
                     <router-link tag="a" :to="`/article/${article._id}`">
@@ -44,7 +44,13 @@ export default {
         date(val) {
             return dayjs(val).format("MMDD");
         }
+    },
+    computed: {
+    // 配列の要素順番を逆順にする
+    reverseArticles() {
+        return this.articles.slice().reverse();
     }
+  }
 };
 </script>
 
