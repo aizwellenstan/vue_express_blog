@@ -18,8 +18,8 @@
                 </div>
                 <div class="flex-1">
                   <a
-                  href="https://github.com/aizwellenstan/vue_express_blog" target="_blank" rel="noopener noreferrer" 
-                  class="repo-link">
+                    href="https://github.com/aizwellenstan/vue_express_blog" target="_blank" rel="noopener noreferrer"
+                    class="repo-link">
                     GitHub
                     <svg xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
@@ -32,7 +32,9 @@
                         fill="currentColor"
                         points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
                       </polygon>
-                    </svg></a></div>
+                    </svg>
+                  </a>
+                </div>
                 <div class="fs-lg">
                     <span>Hello,</span>
                     <span>{{model.username}}&nbsp;</span>
