@@ -17,7 +17,7 @@
                 <div class="title">
                     <router-link tag="a" :to="`/article/${article._id}`">
                         <h3 class="mb-2 text-dark-1">{{article.title}}</h3>
-                        <div class="w-100 fs-sm text-dark-1 text-ellipsis pb-2">{{article.body}}</div>
+                        <div v-html="article.Body" class="w-100 fs-sm text-dark-1 text-ellipsis pb-2"></div>
                     </router-link>
                 </div>
                 <div class="d-flex jc-between">
@@ -46,10 +46,10 @@ export default {
         }
     },
     computed: {
-    // 配列の要素順番を逆順にする
-    reverseArticles() {
-        return this.articles.slice().reverse();
-    }
+      // 配列の要素順番を逆順にする
+      reverseArticles() {
+          return this.articles.slice().reverse();
+      }
   }
 };
 </script>
