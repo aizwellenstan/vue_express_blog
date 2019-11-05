@@ -28,7 +28,7 @@
     "http-assert": "^1.4.1",
     "inflection": "^1.12.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.6.7",
+    "mongoose": "^5.7.5",
     "serve-static": "^1.14.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
