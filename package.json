@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcrypt": "3.0.1",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^2.6.5",
